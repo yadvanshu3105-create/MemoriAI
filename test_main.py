@@ -17,7 +17,6 @@ def test_memory_retrieval_not_found(mock_openai):
     """Test search when no terms match memory store."""
     import main
     assistant = main.MemoriAIAssistant()
-    # Using terms completely absent from memory store to avoid matching stop-words like 'is'
     context = assistant.retrieve_memories("weather forecast Tokyo")
     assert context == "No prior context found."
 
@@ -25,14 +24,14 @@ def test_memory_retrieval_not_found(mock_openai):
 @patch("openai.OpenAI")
 def test_chat_method(mock_openai_class):
     """Test chat execution using mocked OpenAI client."""
+    # Set up mock response BEFORE creating the assistant
     mock_client = MagicMock()
-    mock_openai_class.return_value = mock_client
-    
     mock_response = MagicMock()
     mock_response.choices = [
         MagicMock(message=MagicMock(content="MemoriAI response."))
     ]
     mock_client.chat.completions.create.return_value = mock_response
+    mock_openai_class.return_value = mock_client
 
     import main
     assistant = main.MemoriAIAssistant()
