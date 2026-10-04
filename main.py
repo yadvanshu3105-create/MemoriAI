@@ -1,7 +1,6 @@
 import os
 from openai import OpenAI
 
-# Initialize client targeting Nebius API for Nemotron-4 340B
 client = OpenAI(
     base_url="https://api.nebius.ai/v1",
     api_key=os.environ.get("NEBIUS_API_KEY", "your-nebius-api-key-here")
@@ -44,3 +43,4 @@ if __name__ == "__main__":
     query = "What model and architecture is MemoriAI running on?"
     print(f"Query: {query}")
     print("Response:", assistant.chat(query))
+    
