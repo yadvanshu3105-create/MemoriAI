@@ -2,8 +2,8 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.nebius.ai/v1",
-    api_key=os.environ.get("NEBIUS_API_KEY", "your-nebius-api-key-here")
+    base_url="https://api.studio.nebius.ai/v1/",
+    api_key=os.environ.get("NEBIUS_API_KEY")
 )
 
 class MemoriAIAssistant:
