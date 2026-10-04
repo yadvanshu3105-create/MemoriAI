@@ -1,4 +1,6 @@
 # MemoriAI 🧠  
+![Build Status](https://github.com/yadvanshu3105-create/MemoriAI/actions/workflows/python-tests.yml/badge.svg)
+
 > **Autonomous Private Virtual Assistant with Long-Term Context Memory**
 
 MemoriAI is a privacy-first, autonomous virtual assistant designed to overcome context limits and high API overhead in LLMs. Powered by **NVIDIA Nemotron-4 340B** on **Nebius AI Cloud**, MemoriAI provides low-latency, contextual interactions using dynamic memory indexing and real-time tool execution.
