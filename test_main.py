@@ -1,6 +1,6 @@
 import os
 import pytest
-from unittest.mock import MagicMock
+from unittest.mock import patch, MagicMock
 
 import main
 
@@ -19,11 +19,9 @@ def test_memory_retrieval_not_found():
     assert context == "No prior context found."
 
 
-def test_chat_method():
-    """Test chat method response without making real API network requests."""
-    assistant = main.MemoriAIAssistant()
-
-    # 1. Build the expected OpenAI return object structure: response.choices[0].message.content
+@patch("main.client.chat.completions.create")
+def test_chat_method(mock_create):
+    """Test chat execution using mocked global client."""
     mock_message = MagicMock()
     mock_message.content = "MemoriAI response."
 
@@ -33,13 +31,11 @@ def test_chat_method():
     mock_response = MagicMock()
     mock_response.choices = [mock_choice]
 
-    # 2. Replace the real API client method with a mock object returning mock_response
-    assistant.client.chat.completions.create = MagicMock(return_value=mock_response)
+    mock_create.return_value = mock_response
 
-    # 3. Call chat method
+    assistant = main.MemoriAIAssistant()
     response = assistant.chat("hackathon")
 
-    # 4. Assert response matches mocked content and API method was invoked
     assert response == "MemoriAI response."
-    assert assistant.client.chat.completions.create.called
+    assert mock_create.called
     
