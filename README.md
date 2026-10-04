@@ -1,5 +1,8 @@
-# MemoriAI 🧠  
-![Build Status](https://github.com/yadvanshu3105-create/MemoriAI/actions/workflows/python-tests.yml/badge.svg)
+![Build Status](https://github.com/yadvanshu3105-create/MemoriAI/workflows/python-tests.yml/badge.svg)
+
+# MemoriAI 🧠
+
+Autonomous Private Virtual Assistant with Long-Term Context Memory
 
 > **Autonomous Private Virtual Assistant with Long-Term Context Memory**
 
