@@ -19,8 +19,6 @@ MemoriAI is a privacy-first, autonomous virtual assistant designed to overcome c
 
 ### 1. Installation
 
-Clone the repository and install required dependencies:
-
 git clone https://github.com/yadvanshu3105-create/MemoriAI.git
 cd MemoriAI
 pip install -r requirements.txt
