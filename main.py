@@ -3,7 +3,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="https://api.studio.nebius.ai/v1/",
-    api_key=os.environ.get("NEBIUS_API_KEY")
+    api_key="YOUR_ACTUAL_API_KEY_HERE"
 )
 
 class MemoriAIAssistant:
