@@ -1,4 +1,4 @@
-Import os
+import os
 from openai import OpenAI
 
 # Initialize client targeting Nebius API for Nemotron-4 340B
